@@ -1,7 +1,10 @@
 package entidades;
 
 public interface Taxavel {
-	public Double getAliquotaImposto();
-	
-	public Double calcularImposto(Double precoBase);
+
+	Double getAliquotaImposto();
+
+	default Double calcularImposto(Double valor) {
+		return valor * getAliquotaImposto();
+	}
 }
