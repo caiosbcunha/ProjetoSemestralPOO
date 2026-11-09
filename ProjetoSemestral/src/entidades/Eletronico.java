@@ -15,7 +15,7 @@ public class Eletronico extends Produto {
 
 	@Override
 	public Double calcularPrecoFinal() {
-		return getPrecoBase() + calcularImposto(getAliquotaImposto());
+		return getPrecoBase() + calcularImposto(getPrecoBase());
 	}
 
 	@Override

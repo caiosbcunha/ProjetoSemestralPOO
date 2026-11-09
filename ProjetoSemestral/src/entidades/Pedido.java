@@ -48,16 +48,8 @@ public class Pedido {
 		return status;
 	}
 
-	public void setStatus(StatusPedido status) {
-		this.status = status;
-	}
-
 	public ArrayList<ItemPedido> getItens() {
 		return itens;
-	}
-
-	public void setItens(ArrayList<ItemPedido> itens) {
-		this.itens = itens;
 	}
 
 	public boolean adicionarItem(Produto produto, Integer quantidade) {
@@ -68,6 +60,34 @@ public class Pedido {
 		return true;
 	}
 
-	
-	
+	// Remove o item do produto e devolve a quantidade ao estoque
+	public boolean removerItem(Integer codigoProduto) {
+		for (ItemPedido item : itens) {
+			if (item.getProduto().getCodigo().equals(codigoProduto)) {
+				item.getProduto().entradaEstoque(item.getQuantidade());
+				itens.remove(item);
+				return true; // sai logo após o remove
+			}
+		}
+		return false; // produto não está no pedido
+	}
+
+	// Soma os subtotais de todos os itens
+	public Double calcularTotal() {
+		Double total = 0.0;
+		for (ItemPedido item : itens) {
+			total += item.getSubtotal();
+		}
+		return total;
+	}
+
+	// Pedido finalizado (entregue ou cancelado) não muda mais de status
+	public boolean alterarStatus(StatusPedido novoStatus) {
+		if (status == StatusPedido.ENTREGUE || status == StatusPedido.CANCELADO) {
+			return false;
+		}
+		this.status = novoStatus;
+		return true;
+	}
+
 }

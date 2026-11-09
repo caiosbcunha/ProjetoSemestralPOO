@@ -1,6 +1,6 @@
 package entidades;
 
-public abstract class Produto implements Taxavel{
+public abstract class Produto implements Taxavel {
 	private Integer codigo;
 	private String nome;
 	private Double precoBase;
@@ -57,7 +57,7 @@ public abstract class Produto implements Taxavel{
 	}
 
 	public boolean saidaEstoque(int quantidade) {
-		if (quantidade <= quantidadeEstoque) {
+		if (quantidade > 0 && quantidade <= quantidadeEstoque) {
 			quantidadeEstoque -= quantidade;
 			return true;
 		} else {
@@ -67,7 +67,7 @@ public abstract class Produto implements Taxavel{
 
 	@Override
 	public String toString() {
-		return String.format("Produto: %s %nCódigo: %d %nPreço: R$%.2f %nQuantidade em estoque: ", nome, codigo,
+		return String.format("Produto: %s %nCódigo: %d %nPreço: R$%.2f %nQuantidade em estoque: %d", nome, codigo,
 				calcularPrecoFinal(), quantidadeEstoque);
 	}
 
