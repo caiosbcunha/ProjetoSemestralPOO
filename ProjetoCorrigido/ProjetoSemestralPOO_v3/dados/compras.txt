@@ -1,0 +1,7 @@
+1;TechSupply Ltda;101;5;2400.0
+2;TechSupply Ltda;102;10;1400.0
+3;Distribuidora Som;103;20;150.0
+4;Atacado Bom Preço;201;50;20.0
+5;Atacado Bom Preço;202;80;6.5
+6;Moda Fácil;301;30;30.0
+7;Moda Fácil;302;15;95.0

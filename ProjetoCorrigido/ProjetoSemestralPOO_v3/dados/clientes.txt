@@ -1,0 +1,8 @@
+Ana Souza;ana.souza@email.com;12345678901;71999990001
+Bruno Lima;bruno.lima@email.com;23456789012;71999990002
+Carla Mendes;carla.mendes@email.com;34567890123;71999990003
+Diego Rocha;diego.rocha@email.com;45678901234;71999990004
+Eduarda Alves;eduarda.alves@email.com;56789012345;71999990005
+Felipe Costa;felipe.costa@email.com;67890123456;71999990006
+Gabriela Nunes;gabriela.nunes@email.com;78901234567;71999990007
+Raphael;raphael.leao@hotmail.com;10929483902;71992881841
